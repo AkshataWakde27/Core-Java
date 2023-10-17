@@ -1,0 +1,50 @@
+package Constructor;
+
+public class Constructor_Chaining {
+	//laptop
+	String brand;
+	String ram;
+	double price;
+	String processor;
+	
+	// no argument constructor
+	public Constructor_Chaining() {
+		//super() call statement always present
+		System.out.println("Object Loading Started");
+	}
+	// argument constructor
+	public Constructor_Chaining(String brand,String ram) {
+		this();	// this call statement ,it is call parent constructor
+		this.brand=brand;
+		this.ram=ram;
+		
+	}
+	
+	public Constructor_Chaining(String brand, String ram,String processor, double price) {
+		this(brand,ram);
+		this.processor=processor;
+		this.price=price;
+		
+	}
+}
+
+package Constructor;
+
+public class Driver_Chaining {
+
+	public static void main(String[] args) {
+		Constructor_Chaining cc=new Constructor_Chaining("DELL","16GB","INTEL",100000);
+		System.out.println(cc.brand);
+		System.out.println(cc.ram);
+		System.out.println(cc.processor);
+		System.out.println(cc.price);
+	}
+}
+/*
+Output=
+Object Loading Started
+DELL
+16GB
+INTEL
+100000.0
+*/

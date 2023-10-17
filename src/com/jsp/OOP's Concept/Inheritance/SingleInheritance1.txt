@@ -1,0 +1,34 @@
+package SingleInheritance;
+
+public class Animal {  // Parent class
+
+	public void tiger() {
+		System.out.println("Tiger is a animal");
+	}
+	
+}
+  
+
+//=============================================================================================
+package SingleInheritance;
+
+public class FoxAnimal extends Animal{    // child class accessed parent class properties
+		public void fox() {
+			System.out.println("Fox is a animal");
+		}
+		
+		// creating object of child class
+		
+		public static void main(String[] args) {
+		FoxAnimal f=new FoxAnimal();
+		f.tiger();
+		f.fox();
+		
+		}
+	}
+
+/*
+OUTPUT=
+Tiger is a animal
+Fox is a animal
+*/

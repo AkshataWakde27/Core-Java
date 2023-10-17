@@ -1,0 +1,65 @@
+package abstraction_class_methods;
+
+public abstract class SocialMedia {
+	
+	// abstract method can written inside the abstract class only
+	public abstract void uploadPhoto();
+	
+	public abstract void sendMessage();
+	
+	abstract public void receiveMessage();
+}
+
+
+//=================================================================================
+package abstraction_class_methods;
+
+public abstract class Instagram extends SocialMedia{
+	// one abstract method is remain thats why this class is abstract class
+	
+	// override abstract method in child class
+	@Override
+	public void sendMessage() {
+		System.out.println("Send Message is available in vaersion 1 ");
+	}
+	
+	@Override
+	public void receiveMessage() {
+		System.out.println("Receive Message is available in vaersion 1 ");
+	}
+}
+
+
+//=================================================================================
+package abstraction_class_methods;
+
+public class Instagram2 extends Instagram{
+
+//override abstract method in child class
+@Override
+public void uploadPhoto() {
+	System.out.println("Upload Photo is available in vaersion 2 ");
+}
+}
+
+
+//=================================================================================
+package abstraction_class_methods;
+
+public class SocialMediaDriver {
+public static void main(String[] args) {
+	Instagram2 i=new Instagram2();
+	i.sendMessage();
+	i.receiveMessage();
+	i.uploadPhoto();
+}
+}
+
+
+
+/*
+OUTPUT=
+Send Message is available in vaersion 1 
+Receive Message is available in vaersion 1 
+Upload Photo is available in vaersion 2 
+*/

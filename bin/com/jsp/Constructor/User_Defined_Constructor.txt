@@ -1,0 +1,68 @@
+package Constructor;
+
+public class User_Defined_Constructor {
+	String name;
+	static double price=10;
+	static String brand="Cello";
+	String colour;
+	
+	// user defined constructor with no argument
+	public User_Defined_Constructor() {
+		System.out.println("No argument Constructor");
+	}
+	//static initializer
+	static {
+		System.out.println("Static Initializer");
+	}
+	//non static initializer
+	{
+		System.out.println("Non Static Initializer");
+	}
+
+}
+
+package Constructor;
+
+public class Driver_UserDefined_Constructor {
+
+	public static void main(String[] args) {
+		// User defined constructor no parameterized/argument constructor
+		User_Defined_Constructor ud=new User_Defined_Constructor();
+		ud.colour="Blue";
+		ud.name="Gripper";
+		System.out.println(ud.name);
+		System.out.println(ud.brand);
+		System.out.println(ud.colour);
+		System.out.println(ud.price);
+		
+		System.out.println("=====================================================");
+		
+		
+		User_Defined_Constructor ud1=new User_Defined_Constructor();
+		ud1.colour="Black";
+		ud1.name="Pinpoint";
+		System.out.println(ud1.name);
+		System.out.println(ud1.brand);
+		System.out.println(ud1.colour);
+		System.out.println(ud1.price);
+	}
+}
+/*
+Output=
+Static Initializer
+Non Static Initializer
+No argument Constructor
+Gripper
+Cello
+Blue
+10.0
+=====================================================
+Non Static Initializer
+No argument Constructor
+Pinpoint
+Cello
+Black
+10.0
+
+
+*/

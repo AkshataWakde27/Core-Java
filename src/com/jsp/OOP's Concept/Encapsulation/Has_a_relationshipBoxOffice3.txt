@@ -1,0 +1,201 @@
+package Theatre_has_a_relationship;
+
+public class Ticket {
+
+	//variable declaration
+	private String movies_name;
+	private int no_of_tickets;
+	
+	//constructor calling
+	public Ticket(String m,int n) {
+		this.movies_name=m;
+		this.no_of_tickets=n;	
+	}
+	
+	//getter and setter
+	public void setMovies_name(String movies_name) {
+		this.movies_name=movies_name;
+	}
+	public String getMovies_name() {
+		return movies_name;
+	}
+	
+	
+	public void setNo_of_tickets(int no_of_tickets) {
+		this.no_of_tickets=no_of_tickets;
+	}
+	public int getNo_of_tickets() {
+		return no_of_tickets;
+	}
+	
+	//print method
+	public void printTicketDetails() {
+		System.out.println("==========Ticket============");
+		System.out.println("Movie Name = " + movies_name);
+		System.out.println("Number of Tickets Booked = " + no_of_tickets);
+	}
+}
+
+
+//=========================================================================
+
+package Theatre_has_a_relationship;
+
+public class Theatre {
+
+	
+		// Variable declaration of Theatre class
+		private String theater_name;
+		private int no_of_seats;
+		
+		//has a relationship
+		private Ticket ticket;
+		
+		//constructor calling
+		public Theatre(String theater_name,int no_of_seats) {
+			this.theater_name=theater_name;
+			this.no_of_seats=no_of_seats;
+		}
+
+		//getter and setter
+		public String getTheater_name() {
+			return theater_name;
+		}
+
+		public void setTheater_name(String theater_name) {
+			this.theater_name = theater_name;
+		}
+
+		public int getNo_of_seats() {
+			return no_of_seats;
+		}
+
+		public void setNo_of_seats(int no_of_seats) {
+			this.no_of_seats = no_of_seats;
+		}
+
+		public Ticket getTicket() {
+			return ticket;
+		}
+
+		public void setTicket(Ticket ticket) {
+			this.ticket = ticket;
+		}
+		
+		// code of theatre operation
+		public int bookTicket() {
+			if(ticket.getNo_of_tickets()<=no_of_seats) {
+				no_of_seats=no_of_seats-ticket.getNo_of_tickets();
+				return ticket.getNo_of_tickets();
+			}else {
+				return -1;
+			}
+		}
+			public int showSeatAvailability() {
+				return no_of_seats;
+			}
+			public void cancelTicket(int cancel_ticket) {
+				if(cancel_ticket<=ticket.getNo_of_tickets()) {
+					no_of_seats=no_of_seats+cancel_ticket;
+					ticket.setNo_of_tickets(ticket.getNo_of_tickets()-cancel_ticket);
+				}else {
+					System.out.println("============Technical issue============");
+				}
+			}
+			public void showTicketDetails() {
+				ticket.printTicketDetails();
+		}
+}
+
+
+//============================================================================
+
+package Theatre_has_a_relationship;
+
+import java.util.Scanner;
+
+public class BoxOffice {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Theatre theatre=new Theatre("Balaji",500);
+		boolean flag=true;
+		while(flag) {
+			System.out.println("Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit");
+			int n=sc.nextInt();
+			switch(n) {
+			case 1: {
+				int number_of_seats=theatre.getNo_of_seats();
+				System.out.println(number_of_seats+" Seats are Available ");
+			}
+			break;
+			case 2:{
+				System.out.println("Enter the Moive Name ");
+				String name=sc.next();
+				System.out.println("Enter the Number Of Seats ");
+				int num=sc.nextInt();
+				theatre.setTicket(new Ticket(name,num));
+				int res =theatre.bookTicket();
+				System.out.println("Succesfully Booked "+res+" Tickets ");
+			}
+			break;
+			case 3:{
+				System.out.println("Ticket Details ");
+				Ticket t=theatre.getTicket();
+				System.out.println(t.getMovies_name());
+				System.out.println(t.getNo_of_tickets());
+				 //or
+			//	System.out.println(theatre.getTicket().getMovie_name());
+			}
+			break;
+			case 4:{
+				System.out.println("Enter the number of ticket to be cancelled");
+				int cancel=sc.nextInt();
+				theatre.cancelTicket(cancel);
+			}
+			break;
+			case 5:{
+				System.out.println("Case 5");
+				flag=false;
+			}
+			break;
+			default:{
+				System.out.println("Wrong input");
+			}
+			break;
+			}
+	   }
+	}
+
+}
+
+/*
+ OUTPUT=
+Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit
+1
+500 Seats are Available 
+Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit
+2
+Enter the Moive Name 
+Dhoom
+Enter the Number Of Seats 
+10
+ Succesfully Booked 10 Tickets 
+Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit
+3
+Ticket Details 
+Dhoom
+10
+Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit
+4
+Enter the number of ticket to be cancelled
+4
+Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit
+3
+Ticket Details 
+Dhoom
+6
+Enter 1.Show Seat Availability /n 2.Book Ticket 3.To check Ticket Details 4.Cancel Ticket 5.Exit
+5
+Case 5
+
+*/

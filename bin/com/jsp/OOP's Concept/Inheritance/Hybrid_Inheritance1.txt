@@ -1,0 +1,64 @@
+package Hybrid_Inheritance;
+
+public class A { // parent class of B,C class
+	public void parent() {
+		System.out.println("A is a parent class ");
+	}
+}
+
+//===============================================================================
+package Hybrid_Inheritance;
+
+public class B extends A{		// child class of A class
+	public void child1() {
+		System.out.println("B is a Child class and parent class of D class");
+	}
+}
+
+//============================================================================
+package Hybrid_Inheritance;
+
+public class C extends A{		// child class of A class
+	public void child2() {
+		System.out.println("C is a child class and parent class of D class ");
+	}
+
+
+}
+
+//=========================================================================
+package Hybrid_Inheritance;
+
+public class D extends B{		// child class of A class
+
+	public void childBCClass() {
+		System.out.println("D is a child class of B,C class ");
+	}
+}
+
+//========================================================================
+package Hybrid_Inheritance;
+
+public class AbcdDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	D d=new D();
+	d.parent();		// parent properties access 
+	d.child1();		// there are 2 parent class for D class but compiler get confused which 
+					// one select thats why we does not used hybrid inheritance in java
+					// we can say that presence of multiple inheritance we can't used hybrid inheritance in java 
+	
+	d.childBCClass(); 
+	}
+
+}
+
+/*
+OUTPUT=
+A is a parent class 
+B is a Child class and parent class of D class
+D is a child class of B,C class 
+
+*/

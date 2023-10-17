@@ -1,0 +1,72 @@
+package Constructor;
+
+public class Parameterized_Constructor {
+	// user defined parameterized/ argument constructor
+	String name;
+	static double price=10;
+	static String brand="Cello";
+	String colour;
+	
+	// user defined constructor with no argument
+	public Parameterized_Constructor() {
+		System.out.println("Argument Constructor");
+	}
+	//static initializer
+	static {
+		System.out.println("Static Initializer");
+	}
+	//non static initializer
+	{
+		System.out.println("Non Static Initializer");
+	}
+	//parameterized constructor
+	public Parameterized_Constructor(String name,String brand,String colour,double price) {
+		//global=local variables
+		this.name=name;
+		this.brand=brand;
+		this.colour=colour;
+		this.price=price;
+	}
+
+}
+
+
+package Constructor;
+
+public class Driver_Parameter {
+
+	public static void main(String[] args) {
+			// User defined constructor with parameterized/argument constructor
+			Parameterized_Constructor pc=new Parameterized_Constructor();
+			pc.colour="Blue";
+			pc.name="Gripper";
+			System.out.println(pc.name);
+			System.out.println(pc.brand);
+			System.out.println(pc.colour);
+			System.out.println(pc.price);
+			
+			System.out.println("=====================================================");
+			// Parameterized constructor calling
+			Parameterized_Constructor pc1=new Parameterized_Constructor("Pinpoint","Cello","Black",10);
+			System.out.println(pc1.name);
+			System.out.println(pc1.brand);
+			System.out.println(pc1.colour);
+			System.out.println(pc1.price);
+	}
+}
+/*
+Output=
+Static Initializer
+Non Static Initializer
+Argument Constructor
+Gripper
+Cello
+Blue
+10.0
+=====================================================
+Non Static Initializer
+Pinpoint
+Cello
+Black
+10.0
+*/

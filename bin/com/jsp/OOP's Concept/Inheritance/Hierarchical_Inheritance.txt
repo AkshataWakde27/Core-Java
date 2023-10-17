@@ -1,0 +1,69 @@
+package Hierarchical_Inheritance;
+
+public class Animal {		// parent class of cat ,dog, lion
+	public void animal() {
+		System.out.println("Animal is a parent class");
+	}
+}
+
+//===================================================================================
+package Hierarchical_Inheritance;
+
+public class Cat extends Animal {		// 1st child class of a animal class
+	public void cat() {
+		System.out.println("Cat is a child class");
+	}
+
+}
+
+//======================================================================================
+package Hierarchical_Inheritance;
+
+public class Dog extends Animal {  // 2nd child class of a animal class
+	public void dog() {
+		System.out.println("Dog is a child class");
+	}
+}
+
+//================================================================================
+package Hierarchical_Inheritance;
+
+public class Lion extends Animal{ 	// 3rd child class of a animal class
+	public void lion() {
+		System.out.println("Lion is a king of Forest");
+	}
+}
+
+//=================================================================================
+package Hierarchical_Inheritance;
+
+public class AnimalFamily {
+
+	public static void main(String[] args) {
+		Cat c=new Cat();
+		c.animal(); 	// access only parent and its own methods
+		c.cat();
+		
+		
+		Dog d=new Dog();	// access only parent and its own methods
+		d.animal();
+		d.dog();
+		
+		
+		Lion l=new Lion();	// access only parent and its own methods
+		l.lion();
+		l.animal();	
+	}
+
+}
+
+/*
+ * OUTPUT=
+Animal is a parent class
+Cat is a child class
+Animal is a parent class
+Dog is a child class
+Lion is a king of Forest
+Animal is a parent class
+
+*/

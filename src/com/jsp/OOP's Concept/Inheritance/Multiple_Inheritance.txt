@@ -1,0 +1,54 @@
+package Multiple_Inheritance;
+
+public class Father {		// it is a 1st parent class
+
+	public void father() {
+		System.out.println("Father is a one of the parent class");
+	}
+}
+
+//=====================================================================
+package Multiple_Inheritance;
+
+public class Mother { 		// it is 2nd parent class
+	public void mother() {
+		System.out.println("Mother is a one of the parent class");
+	}
+
+}
+
+//============================================================================================
+package Multiple_Inheritance;
+
+public class Son extends Father { 	// it is a only (1)child class of multiple (2)parent class
+	
+	
+	public void son() {		// it is only access one parent class but there is a compiler confused
+							// or ambiquite for which parent class is select and 
+							// another is there are same method name in both parent classes; then compiler
+		 					// get confused which one select thats why i java Multiple inheritance does not used
+		
+		System.out.println("Son is a only child class");
+	}
+
+}
+
+
+//====================================================================================
+package Multiple_Inheritance;
+
+public class FamilyDriver {
+
+	public static void main(String[] args) {
+		Son s=new Son();
+		s.father();
+		s.son();
+
+	}
+
+}
+
+/*
+OUTPUT=
+Father is a one of the parent class
+Son is a only child class */

@@ -1,0 +1,39 @@
+package june_23to30;
+
+public class Operator_incre_decrement {
+
+	public static void main(String[] args) {
+		//increment and decrement operator
+		int a=10;
+		a++;
+		System.out.println(a);// post increment operator
+		a++;
+		System.out.println(a);
+		int b=20;
+		++b; // pre incerement operator
+		System.out.println(b);
+		++b;
+		System.out.println(b);
+		
+		int c=10;
+		c--;
+		System.out.println(c);// post decrement operator
+		c--;
+		System.out.println(c);
+		int d=20;
+		--d; // pre decerement operator
+		System.out.println(d);
+		--d;
+		System.out.println(d);
+		
+		int e=15;
+		System.out.println(e++ + e++ + ++e + e-- + --e);
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);// ternary operator
+		int res=( a>b)&& (a>c) ? a : (b>a)&&(b>c) ? b: (c>a) &&(c>b)? c: d;
+		System.out.println(res);
+	}
+
+}

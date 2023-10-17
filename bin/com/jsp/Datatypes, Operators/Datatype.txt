@@ -1,0 +1,33 @@
+package june_23to30;
+
+public class Datatype {
+
+	public static void main(String[] args) {
+		// Primitive Data types
+		// 1)Number=
+		/*1.Non Decimal=
+			a)byte (1 byte size)
+			b)short (2 byte size)
+			c)int (4 byte size)
+			d)long (8 byte size)
+			*/
+		//2.Decimal=
+	    //	a)float (4 byte size)
+	    //	b)double (8 byte size)
+		
+		//2) char (2 byte size)
+		//3) boolean (1 byte size)
+		int a=10;
+		System.out.println("int value is " +a);
+		float b=10.0f;
+		System.out.println("float value is " +b);
+		long c=1032875429;
+		System.out.println("long value is " +c);
+		short d=126;
+		System.out.println("short value is " +d);
+		byte e=16;
+		System.out.println("byte value is " +e);
+		
+	}
+
+}

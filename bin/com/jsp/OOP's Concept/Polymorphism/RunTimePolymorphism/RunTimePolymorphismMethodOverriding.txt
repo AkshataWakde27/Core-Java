@@ -1,0 +1,79 @@
+package RunTimePolymorphism;
+
+import java.util.Objects;
+
+//1 way to achieve run time polymorphism
+//It is method overriding
+public class MethodOverriding {
+	int id;
+	String name;
+	String email;
+	
+	public MethodOverriding(int id,String name,String email) {
+		this.id=id;
+		this.name=name;
+		this.email=email;
+	}
+	
+	// override with object class method toString()
+	@Override
+	public String toString() {
+		return "["+ id+ ","+name+","+email+"]";
+	}
+	
+	//override with object class method equals(Object obj)
+	@Override
+	// equals method is used to comparison checking result is true or false
+	
+	public boolean equals(Object obj){		//upcasting in oblect class 
+	
+		MethodOverriding m=(MethodOverriding)obj;	// downcasting with child class
+		if(this.id==m.id && this.name==m.name && this.email==m.email) {
+			return true;	//It checks both are same then true output
+	}
+	else{
+		return false;
+	}
+	}
+	
+	//override with object class method equals(Object obj)
+	@Override
+	public int hashCode() {
+		return Objects.hash(id,name,email);	// we can give in any order parameters
+	}
+}
+
+
+//=======================================================================
+package RunTimePolymorphism;
+
+public class MethodOverridingDriver {
+
+	public static void main(String[] args) {
+		MethodOverriding m=new MethodOverriding(101,"Rohit","rohit@gmail.com");
+		MethodOverriding m1=new MethodOverriding(101,"Rohit","rohit@gmail.com");
+		
+		//toString() output
+		System.out.println(m);
+		
+		//for boolean()
+		System.out.println(m.equals(m1));
+		//System.out.println(m==m1);
+		
+		//for hash()
+		System.out.println(m.hashCode());
+		System.out.println(m.hashCode());
+		System.out.println(m.equals(m1));
+
+	}
+
+}
+
+/*
+OUTPUT=
+[101,Rohit,rohit@gmail.com]
+true
+-1022671659
+-1022671659
+true
+*/

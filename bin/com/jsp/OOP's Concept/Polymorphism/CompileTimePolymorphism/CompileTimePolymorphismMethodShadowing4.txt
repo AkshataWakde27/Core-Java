@@ -1,0 +1,49 @@
+package CompileTimePolymorphism;
+//4 ways to achieve compile time polymorphism
+//4th is method shadowing
+public class A {
+	public static void m1() {
+		System.out.println("Static method m1 of A");
+	}
+	public void m2() {
+		System.out.println("Non Static method m2 of A");
+	}
+}
+
+
+//==========================================================================
+package CompileTimePolymorphism;
+//4 ways to achieve compile time polymorphism
+//4th is method shadowing
+public class B extends A {
+	
+	// non static method of a parent can be override by child class
+	@Override
+	public void m2() {
+		System.out.println("Non Static method m2 of B");
+	}
+	
+	
+	// static method of a parent class does not override by child class
+	public static void m1() {
+		System.out.println("Non Static method m1 of B");
+	}
+}
+
+//======================================================================
+package CompileTimePolymorphism;
+
+public class ABDriver {
+	public static void main(String[] args) {
+		A a=new B();	//UP Casting
+		a.m1();
+		a.m2();
+	}	
+}
+
+
+/*
+OUTPUT=
+Static method m1 of A
+Non Static method m2 of B
+*/

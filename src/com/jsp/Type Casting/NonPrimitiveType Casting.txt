@@ -1,0 +1,56 @@
+package Up_Casting__Down_Casting__is_a_relationship;
+
+public class A {
+	int a=10;
+
+}
+===================================================
+package Up_Casting__Down_Casting__is_a_relationship;
+
+public class B extends 	A {
+	int b=20;
+}
+=====================================================
+package Up_Casting__Down_Casting__is_a_relationship;
+
+public class C extends B {
+	int c=30;
+}
+=====================================================
+package Up_Casting__Down_Casting__is_a_relationship;
+
+public class AbcDriver {
+
+	public static void main(String[] args) {
+		
+	// Case=1
+		// Whenever parent wants to access child properties we used up casting, down casting
+		A a1=new B(); 	// Up Casting
+		B b=(B)a1;		// Down Casting
+		System.out.println(b.a);  	//10
+		System.out.println(b.b);	//20
+		
+
+	// Case=2
+		A a3=new B();	// up casting 
+		B b1=(B)a3;  	// Down casting 
+		System.out.println("Class b = "+b1.b);		//Class b=20
+		
+		
+	// Case=3
+		A a2=new B();	// up casting (parent reference converting to child class type)
+		C c=(C)a2;  	// Down casting 
+		System.out.println("Class c = "+c.c);		// Class Cast Exception Error
+		// but child class instance itself missing 
+	}
+
+}
+
+/*
+OUTPUT=
+10
+20
+Class b = 20
+Error= Class Cast Exception
+*/
+ 

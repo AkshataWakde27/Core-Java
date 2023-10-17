@@ -1,0 +1,21 @@
+package june_23to30;
+
+public class Decision_making_statements {
+
+	public static void main(String[] args) {
+		// if condition true
+	int a=10;
+	if(a%2==0) {
+		System.out.println("The number is even " +a );
+	}
+	System.out.println("Program Ends...");
+	
+	// if condition false
+	int b=11;
+	if(b%2==0) {
+		System.out.println("The number is even " +a );
+	}
+	System.out.println("The number is odd");
+	}
+
+}

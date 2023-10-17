@@ -1,0 +1,33 @@
+package Constructor;
+
+public class Default_Constructor {
+	String name;
+	int id;
+	double price;
+}
+
+package Constructor;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		Default_Constructor dc=new Default_Constructor();
+		// compiler implicitely create an default constructor
+		dc.id=10;
+		dc.name="Rohit";
+		dc.price=100;
+	
+		System.out.println(dc.id);
+		System.out.println(dc.name);
+		System.out.println(dc.price);
+
+	}
+
+}
+/*
+Output=
+10
+Rohit
+100.0
+*/
+

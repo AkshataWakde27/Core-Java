@@ -1,0 +1,41 @@
+package july1_to8july;
+
+public class DecisionControlStatement {
+
+	public static void main(String[] args) {
+		//1.While loop
+		//2.Do while loop
+		//3.for loop
+	int a=1;
+	while(a<=5) {
+		System.out.println(a);   //ascending order print 1 to 5
+		a++; // ++a
+		
+	}
+	System.out.println("Program one end...");       
+	
+	int b=5;
+	while(b>=1) {
+		System.out.println(b);   //descending order print 1 to 5
+		b--; // --a
+		
+	}
+	System.out.println("Program end...");
+	}
+
+}
+/*
+Output=
+1
+2
+3
+4
+5
+Program one end...
+5
+4
+3
+2
+1
+Program end...
+*/

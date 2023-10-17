@@ -1,0 +1,53 @@
+package Multi_Level_Inheritance;
+
+public class GrandFather {  // parent class of father class 
+	public void buyLand() {
+		System.out.println("Grandfather buy a land");
+	}
+
+}
+
+
+//=============================================================================================
+package Multi_Level_Inheritance;
+
+public class Father extends GrandFather { // this is a child class for grandfather class 
+							// and this is a parent class for son class
+	
+	public void buildHouse() {
+	System.out.println("Father built a house");
+	}
+
+}
+
+//=========================================================================================
+package Multi_Level_Inheritance;
+
+public class Son extends Father {	// child class of father class
+	public void buyCar() {
+		System.out.println("Son buy a car");
+	}
+
+}
+
+//===========================================================================================
+package Multi_Level_Inheritance;
+
+public class FamilyDriver {
+
+	public static void main(String[] args) {
+		Son s=new Son();	// create object of latest or last child class
+		
+		s.buyLand();		// calling grandfather class methods by using child class object
+		s.buildHouse();		// calling father class methods by using child class object
+		s.buyCar();		
+	}
+
+}
+
+/*
+OUTPUT=
+Grandfather buy a land
+Father built a house
+Son buy a car
+*/

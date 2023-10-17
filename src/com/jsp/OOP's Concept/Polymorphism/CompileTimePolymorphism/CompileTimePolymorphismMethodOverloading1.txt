@@ -1,0 +1,26 @@
+package CompileTimePolymorphism;
+// 4 ways to achieve compile time polymorphism
+// 1st is method overloading
+public class ByMethodOverloading {
+
+	// method overloading
+	public static void sum(int a,int b) {
+		System.out.println("Sum of two number is = "+ (a+b));
+	}
+	// method overloading
+	public static void sum(int a,int b, int c) {
+		System.out.println("Sum of three number is = "+ (a+b+c));
+	}
+	
+	public static void main(String[] args) {
+		ByMethodOverloading M=new ByMethodOverloading();
+		M.sum(10, 20);		
+		M.sum(10, 20, 30);
+	}
+	
+}
+
+//OUTPUT=
+//Sum of two number is = 30
+//Sum of three number is = 60
+

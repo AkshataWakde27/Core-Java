@@ -1,0 +1,26 @@
+package june_23to30;
+
+public class Decisionstatement2 {
+
+	public static void main(String[] args) {
+		// if else
+		int a=10; int b=20;
+		if(a%2==0) {
+			System.out.println("The number is even = " + a);
+		}
+		else {
+			System.out.println("The number is odd");
+		}
+		System.out.println("Program one Ends...");
+		
+		// another example larger number using if else
+		if(a>b) {
+			System.out.println("The number is greater = " + a);
+		}
+		else {
+			System.out.println("The number is smaller");
+		}
+		System.out.println("Program Ends...");
+	}
+
+}

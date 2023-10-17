@@ -1,0 +1,38 @@
+package july1_to8july;
+
+public class DecisionControlStatement2 {
+
+	public static void main(String[] args) {
+		// Do while loop
+	int a=1;
+	do {
+		System.out.println(a); // one statement is always execute without checking condition
+		a++;
+	}while(a<=5);
+	System.out.println("Ascending order done...");
+	
+	int b=5;
+	do {
+		System.out.println(b); // one statement is always execute without checking condition
+		b--;
+	}while(b>=1);
+	System.out.println("Desending order done...");
+
+	}
+
+}
+/*
+Output=
+1
+2
+3
+4
+5
+Ascending order done...
+5
+4
+3
+2
+1
+Desending order done...
+*/

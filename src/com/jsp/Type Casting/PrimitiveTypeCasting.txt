@@ -1,0 +1,24 @@
+package june_23to30;
+
+public class PrimitiveTypeCasting {
+
+	public static void main(String[] args) {
+		// Data widening(Implicit type casting)
+		// Data narrowing(Explicit type casting)
+		byte a=25;
+		short b=a;
+		System.out.println(b); // widening
+		int c=b;
+		System.out.println(c);
+		
+		// narrowing
+		byte d=10;
+	    int e=d;
+	    byte f=(byte)e;
+	    System.out.println(f);
+	    short g=(short)f;
+	    System.out.println(g);
+
+	}
+
+}

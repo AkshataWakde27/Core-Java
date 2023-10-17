@@ -1,0 +1,89 @@
+package Hybrid_Inheritance;
+
+public class Animal {	// 1st parent class of Dog class
+	public void animal() {
+		System.out.println("Animal is a 1st parent class");
+	}
+
+}
+
+//==========================================================
+package Hybrid_Inheritance;
+
+public class Cat{		// 2nd parent class of a child(dog) class
+	public void cat() {
+		System.out.println("Cat is a 2nd parent class");
+	}
+
+}
+
+//==============================================================
+package Hybrid_Inheritance;
+
+public class Dog extends Animal {  // only child class of a animal, cat class and parent class of turtle,lion class
+	public void dog() {
+		System.out.println("Dog is a child class of a animal , cat class");
+	}
+
+}
+
+//==================================================================
+package Hybrid_Inheritance;
+
+public class Turtle extends Dog{		// It is a 1st child class of a Dog class
+	public void turtle() {
+		System.out.println("Turtle is a 1st child class of a Dog class");
+	}
+}
+
+
+//========================================================================
+package Hybrid_Inheritance;
+
+public class Lion extends Dog{ 	// 2nd child class of a Dog class
+	public void lion() {
+		System.out.println("Lion is a 2nd child class of a Dog class");
+	}
+
+}
+
+//======================================================================
+package Hybrid_Inheritance;
+
+public class AnimalFamily {
+
+	public static void main(String[] args) {
+		// multiple inheritance 
+				Dog d=new Dog();
+				d.animal();
+				d.dog();
+		
+				
+		// 2nd parent class 
+		Cat c=new Cat();
+		c.cat();
+		
+		
+		// hierarchical inheritance
+		Lion l=new Lion();
+		//l.animal();
+		//l.dog();
+		l.lion();  
+		
+		// turtle 2nd child of dog class
+		Turtle t=new Turtle();
+		//t.animal();
+		//t.dog();
+		t.turtle();
+	}
+
+}
+
+/*
+OUTPUT=
+Animal is a 1st parent class
+Dog is a child class of a animal , cat class
+Cat is a 2nd parent class
+Lion is a 2nd child class of a Dog class
+Turtle is a 1st child class of a Dog class
+*/

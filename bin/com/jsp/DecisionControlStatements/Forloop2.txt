@@ -1,0 +1,31 @@
+package dicision_control_statement_for_loop;
+
+public class Forloop2 {
+	public static void main(String[] args) {
+		// 
+		int prod=1; int sum=0;
+		for(int i=1;i<=10;i++) {
+			if(i%2==0) {
+				System.out.println("The sum of even number is = " + (sum=sum+i));
+			}
+			else {
+				System.out.println("The product of odd number is = " + (prod=prod*i));
+			}
+		}
+
+	}
+
+}
+/*
+Output=
+The product of odd number is = 1
+The sum of even number is = 2
+The product of odd number is = 3
+The sum of even number is = 6
+The product of odd number is = 15
+The sum of even number is = 12
+The product of odd number is = 105
+The sum of even number is = 20
+The product of odd number is = 945
+The sum of even number is = 30
+*/

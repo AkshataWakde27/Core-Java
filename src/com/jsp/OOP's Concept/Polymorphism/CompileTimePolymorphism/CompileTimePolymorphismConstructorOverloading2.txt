@@ -1,0 +1,49 @@
+package CompileTimePolymorphism;
+//4 ways to achieve compile time polymorphism
+//2nd is constructor overloading
+public class ByConstructorOverloading {
+	String laptopname;
+	double price;
+	String ram;
+	String processor;
+	
+	// constructor with no argument
+	public ByConstructorOverloading() {
+		System.out.println("No argument constructor");
+	}
+	
+	// constructor with argument
+		public ByConstructorOverloading(String l,double p) {
+			this();
+			this.laptopname=l;
+			this.price=p;
+		}
+	
+	// constructor with argument
+	public ByConstructorOverloading(String l,double p,String r,String pro) {
+		this(l,p);
+		this.laptopname=l;
+		this.price=p;
+		this.ram=r;
+		this.processor=pro;
+	}
+	
+	//
+	public static void main(String[] args) {
+		ByConstructorOverloading co=new ByConstructorOverloading("HP",50000,"8GB","Intel");
+		System.out.println(co.laptopname);
+		System.out.println(co.price);
+		System.out.println(co.processor);
+		System.out.println(co.ram);
+	}
+}
+
+/*
+OUTPUT=
+No argument constructor
+HP
+50000.0
+Intel
+8GB
+*/
+

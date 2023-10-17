@@ -1,0 +1,203 @@
+package mobile_has_a_relationship;
+
+public class Sim1 {
+	private String brand;
+	private long cno;
+	private String type;
+	
+	public Sim1(String brand,String type, long cno) {
+		this.brand=brand;
+		this.type=type;
+		this.cno=cno;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public long getCno() {
+		return cno;
+	}
+
+	public void setCno(long cno) {
+		this.cno = cno;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public void printSim1() {
+		System.out.println("=============SIM1==============");
+		System.out.println(brand);
+		System.out.println(type);
+		System.out.println(cno);
+		//System.out.println("==============================");
+	}
+
+}
+
+
+//============================================================================
+package mobile_has_a_relationship;
+
+public class Sim2 {
+		private String brand;
+		private long cno;
+		private String type;
+		
+		public Sim2(String brand,String type, long cno) {
+			this.brand=brand;
+			this.type=type;
+			this.cno=cno;
+		}
+
+		public String getBrand() {
+			return brand;
+		}
+
+		public void setBrand(String brand) {
+			this.brand = brand;
+		}
+
+		public long getCno() {
+			return cno;
+		}
+
+		public void setCno(long cno) {
+			this.cno = cno;
+		}
+
+		public String getType() {
+			return type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+		
+		public void printSim2() {
+			System.out.println("=============SIM2==============");
+			System.out.println(brand);
+			System.out.println(type);
+			System.out.println(cno);
+			//System.out.println("==============================");
+		}
+
+}
+
+
+//============================================================================
+package mobile_has_a_relationship;
+
+public class Mobile {
+	private String brand;
+	private String name;
+	private String color;
+	private double price;
+	private Sim1 s1;
+	private Sim2 s2;
+	
+	
+	public Mobile(String brand,String name,String color,double price) {
+		this.brand=brand;
+		this.name=name;
+		this.color=color;
+		this.price=price;
+	}
+
+
+	public String getBrand() {
+		return brand;
+	}
+
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+
+	public Sim1 getS1() {
+		return s1;
+	}
+
+
+	public void setS1(Sim1 s1) {
+		this.s1 = s1;
+	}
+
+
+	public Sim2 getS2() {
+		return s2;
+	}
+
+
+	public void setS2(Sim2 s2) {
+		this.s2 = s2;
+	}
+	
+	public void printMobileDetails() {
+		System.out.println("==================Mobile Details====================");
+		System.out.println(brand);
+		System.out.println(name);
+		System.out.println(color);
+		System.out.println(price);
+		s1.printSim1();
+		s2.printSim2();
+		System.out.println("==================================================");
+	}
+
+}
+
+
+//============================================================================
+package mobile_has_a_relationship;
+
+public class MobileSimDriver {
+
+	public static void main(String[] args) {
+		Mobile m1=new Mobile("APPLE","IPHONE15","BLACK",45000);
+		//m1.printMobileDetails();
+		m1.setS1(new Sim1("AIRTEL","5G",1234567890));
+		m1.setS2(new Sim2("JIO","5G",9987654321L));
+		m1.printMobileDetails();
+	}
+}

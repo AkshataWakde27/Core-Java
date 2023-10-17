@@ -1,0 +1,75 @@
+package setter_getter;
+
+public class Employee_setter_getter {
+	private String name;
+	private int id;
+	private double salary;
+	private String email;
+	
+	
+	// setter for name
+	public void setName(String name) {
+		this.name=name;
+	}
+	// getter for name
+	public String getName() {
+		return name;
+	}
+	
+	// setter for id
+		public void setId(int id) {
+			this.id=id;
+		}
+	// getter for name
+		public int getId() {
+			return id;
+		}
+		
+	// setter for salary
+		public void setSalary(double Salary) {
+		this.salary=Salary;
+		}
+	// getter for Salary
+		public double getSalary() {
+		return salary;
+		}
+		
+	// setter for email
+		public void setEmail(String email) {
+		this.email=email;
+		}
+	// getter for email
+		public String getEmail() {
+		return email;
+		}
+
+}
+
+//=================================================================================
+package setter_getter;
+
+public class EmployeeDriver {
+
+	public static void main(String[] args) {
+		Employee_setter_getter e=new Employee_setter_getter();
+		e.setName("Rahul");
+		e.setId(10);
+		e.setSalary(30000);
+		e.setEmail("rahul@gmail.com");
+		
+		System.out.println(e.getName());
+		System.out.println(e.getId());
+		System.out.println(e.getSalary());
+		System.out.println(e.getEmail());
+
+	}
+
+}
+
+/*
+OUTPUT=
+Rahul
+10
+30000.0
+rahul@gmail.com
+*/

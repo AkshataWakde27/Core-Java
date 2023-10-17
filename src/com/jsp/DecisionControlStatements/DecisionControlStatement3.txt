@@ -1,0 +1,27 @@
+package july1_to8july;
+
+public class DecisionControlStatement3 {
+
+	public static void main(String[] args) {
+		// For loop
+	for(int i=1;i<=5;i++) {
+		System.out.println(i);
+		System.out.println("Hii");
+	}
+
+	}
+
+}
+/*
+Output=
+1
+Hii
+2
+Hii
+3
+Hii
+4
+Hii
+5
+Hii
+*/

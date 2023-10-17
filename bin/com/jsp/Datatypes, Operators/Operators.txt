@@ -1,0 +1,31 @@
+package june_23to30;
+
+public class Operators {
+
+	public static void main(String[] args) {
+		
+		int a=10;// Assignment operator
+		System.out.println(a);
+		
+		int b=20;
+		int c=b+=10; // compound assignment operator
+		System.out.println(c);
+		int d=b+10;
+		System.out.println(d);
+		int e=a*b;  // arithmetic operator
+		int f=a/b;
+		System.out.println(e);
+		System.out.println(f);
+		
+		System.out.println(a>b); // relational operator
+		System.out.println(a<=b);
+		System.out.println(a!=b);
+		System.out.println(a>b && a>c);// logical operators
+		System.out.println(a>b || a>c);
+		System.out.println(!(true));
+		System.out.println(!(false));
+		
+		
+	}
+
+}

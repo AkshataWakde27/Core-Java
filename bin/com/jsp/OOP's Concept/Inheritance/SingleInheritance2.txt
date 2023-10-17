@@ -1,0 +1,40 @@
+package SingleInheritance;
+
+public class Employee {		// parent class of Manager class
+	
+	String job="HR";
+	
+
+}
+
+
+//===========================================================================
+package SingleInheritance;
+
+public class Manager extends Employee{	// child class of employee
+	String name="Sachin";
+	double salary=100000;
+}
+
+
+//=============================================================================
+package SingleInheritance;
+
+public class Company {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Manager m=new Manager();
+		System.out.println(" Manager name = "+m.name);
+		System.out.println(" Manager salary = "+m.salary);
+		System.out.println(" Employee job = "+m.job);
+	}
+
+}
+
+/*
+OUTPUT=
+Manager name = Sachin
+Manager salary = 100000.0
+Employee job = HR
+*/

@@ -1,0 +1,30 @@
+package CompileTimePolymorphism;
+//4 ways to achieve compile time polymorphism
+//3rd is variable shadowing
+public class VariableShadowing {
+	int id=10;		// global variable
+	String name="Sachin";	
+	
+	public static void main(String[] args) {
+		//local variable
+		int id=45;
+		String name="Rohit";
+		// local variable hides global variable
+		System.out.println("(Local variable call without object) Local id = "+ id);		//45		
+		System.out.println("(Local variable call without object) Local name = "+name);	//Rohit
+		
+		VariableShadowing v=new VariableShadowing();
+		System.out.println("(Global variable call with object) Global id = "+v.id); //10
+		System.out.println("(Global variable call with object) Global name = "+v.name);  //Sachin
+		
+	}
+	
+}
+
+/*
+OUTPUT=
+(Local variable call without object) Local id = 45
+(Local variable call without object) Local name = Rohit
+(Global variable call with object) Global id = 10
+(Global variable call with object) Global name = Sachin
+*/
